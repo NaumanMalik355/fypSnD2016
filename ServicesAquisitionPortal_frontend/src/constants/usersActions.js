@@ -1,0 +1,24 @@
+export const  Users_Action={
+    NEW:"NEW",
+    SHOW:"SHOW_USERS",
+    LOADNEW:"LOAD_NEW", 
+    LOADSHOW:"LOAD_SHOW",
+       SUCCESS:"SUCCESS",
+       NEWRole:"NEW_ROLE",
+       SHOWROLE:"SHOW_ROLE",
+       LOADNEWRole:"LOAD_NEW_ROLE",
+       LOADSHOWROLE:"LOAD_SHOW_ROLE",
+    FAILED:"FAILED"
+}
+export const  Users_Status={
+    NEW:"NEW",
+    SUCCESS:"SUCCESS",
+    LOADNEW:"LOAD_NEW", 
+    NEWRole:"NEW_ROLE",
+       SHOWROLE:"SHOW_ROLE",
+    LOADSHOW:"LOAD_SHOW",
+    LOADNEWRole:"LOAD_NEW_ROLE",
+    LOADSHOWROLE:"LOAD_SHOW_ROLE",
+    SHOW:"SHOW_USERS",
+    FAILED:"FAILED"
+}
