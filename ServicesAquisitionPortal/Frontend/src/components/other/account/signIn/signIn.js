@@ -96,7 +96,11 @@ function SignIn(props) {
 							color="primary"
 							className={classes.submit}
 						//	onClick={() => props.history.push('/admin/snd/dashboard')}
-					onClick={() => props.handleLogin(user.username,user.password)}
+					// onClick={() =>  (window.location.pathname==='/distributor/sigin'?props.history.push('/distributor/snd/dashboard'):
+					// props.history.push('/admin/snd/dashboard'))}
+						
+						
+						onClick={()=>props.handleLogin(user.username,user.password)}
 						>
 							Sign In
 						</Button>
@@ -112,11 +116,11 @@ lwkh</button>
 									Forgot password?
 								</Link>
 							</Grid>
-							<Grid item>
+							{/* <Grid item>
 								<Link onClick={() => props.handleShowSignup()}>
 									{"Don't have an account? Sign Up"}
 								</Link>
-							</Grid>
+							</Grid> */}
 						</Grid>
 					</div>
 				</div>

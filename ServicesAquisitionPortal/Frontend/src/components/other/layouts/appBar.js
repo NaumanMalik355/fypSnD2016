@@ -105,14 +105,14 @@ export default function SimpleAppBar() {
           {/* <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="Menu">
             <MenuIcon />
           </IconButton> */}
-          <Typography variant="h6" style={{ flexGrow: 1,}}>
-            Sales & Distribution
+          <Typography variant="h6" href='/' style={{ flexGrow: 1,}}>
+            <Link to = "/" style = {{color: 'white',textDecoration:'none'}}>Sales & Distribution</Link>
           </Typography>
 		  <Button color="inherit" style={{textTransform:'capitalize'}} href="/features">Features</Button>
 		  <Button color="inherit" style={{textTransform:'capitalize'}} href="/pricing">Pricing</Button>
 		  <Button color="inherit" style={{textTransform:'capitalize'}} href="/contact">Contact</Button>
           <Button color="inherit" style={{textTransform:'capitalize'}}
-		  href="/distributor/snd/dashboard">Login</Button>
+		  href="/distributor/sigin">Login</Button>
         </Toolbar>
 			</AppBar>
 		</React.Fragment>

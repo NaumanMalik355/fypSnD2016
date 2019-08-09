@@ -9,7 +9,7 @@ export const login=(username,password)=>dispatch=>{
       mode: 'cors',
      body:JSON.stringify(user)
      }).then((response)=>{
-      console.log(response.status)
+      console.log("required"+response.status)
     //console.log('********'+response.statusText);
       response.json().then(data=>{
             //alert(data.userId);

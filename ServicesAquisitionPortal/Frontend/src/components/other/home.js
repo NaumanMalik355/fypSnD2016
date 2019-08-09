@@ -1,6 +1,6 @@
 import React, { useState,useEffect } from 'react';
 import SimpleAppBar from './layouts/appBar.js';
-import ShowPackages from '../superAdmin/packages/showPackage.js';
+import ShowPackageUser from './pricing'
 import Footer from './layouts/footer.js';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
@@ -134,9 +134,8 @@ export default function Home() {
 				</Grid>
 			</Grid>
 
-			<br />
-			<br />
-			<br />
+		
+		
 			<Grid align="right">
 			<ScrollUpButton style={{width:'40px',height:'40px', borderRadius:'5px',padding:8,color:'#ffffff'}}
 			ToggledStyle={{color:'#ffffff'}} />
@@ -144,8 +143,8 @@ export default function Home() {
 					To the top!
 				</button> */}
 			</Grid>
-			
-			<ShowPackages />
+			<br />
+			<ShowPackageUser />
 
 			<Footer />
 		</React.Fragment>

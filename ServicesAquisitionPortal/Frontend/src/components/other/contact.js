@@ -93,7 +93,7 @@ function Contact(props) {
      >
 	 
 	   <Paper className={classes.root} elevation={1}>
-     <Typography variant='h5' align='left' gutterBottom>Contact Form</Typography>
+     <Typography variant='h5' align='center' gutterBottom>Contact Form</Typography>
 	  <Grid container direction="row" style={{padding:30}}>
 	
 	  <Grid item xs={12} style={{backgroundColor:'#efebe9'}}>

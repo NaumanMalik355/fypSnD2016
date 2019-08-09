@@ -102,20 +102,27 @@ class ShowPackages extends React.Component {
 		this.props.history.push('/payment');
 	};
 
+
+
+
+
+	
+	
 	render() {
 		const classes = { useStyles };
+	
 		return (
 			<React.Fragment>
 				<CssBaseline />
-				{window.location.pathname === '/pricing' ? null : <Dashboard />}
+			<Dashboard />
 
 				{/* <Button onClick={()=>this.props.createPackage()}>create package</Button> */}
 				<Container maxWidth="sm" component="main" className={classes.heroContent}>
-					<Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom
+					<Typography component="h1" variant="h4" align="center" color="textPrimary" gutterBottom
 						id="packages">
 						Pricing
 					</Typography>
-					<Typography variant="h5" align="center" color="textSecondary" component="p">
+					<Typography variant="h6" align="center" color="textSecondary" component="p">
 						Quickly build an effective pricing table for your potential customers with this layout.
 						It&apos;s built with default Material-UI components with little customization.
 					</Typography>
@@ -125,8 +132,8 @@ class ShowPackages extends React.Component {
 				<Container maxWidth="md" component="main">
 					<Grid container spacing={5} alignItems="flex-end">
 						
-						{window.location.pathname!=='/'?(this.props.packagelist.map((tier)=>
-							<Grid item key={tier.name} xs={12} sm={tier.name === 'Enterprise' ? 12 : 6} md={4}>
+						{this.props.packagelist.map((tier)=>
+							<Grid  item key={tier.id} xs={12} sm={tier.name === 'Enterprise' ? 12 : 6} md={4}>
 							<Card style={{ borderRadius: '7px' }}>
 								<CardHeader style={{ backgroundColor: '#38BC8B', color: 'white' }}
 									title={tier.name}
@@ -160,7 +167,7 @@ class ShowPackages extends React.Component {
 												component="li"
 												variant="subtitle1"
 												align="center"
-												key={tier.totalusers}
+												key={tier.providedStorage}
 											>
 												{tier.providedStorage} GB of Storage
 											</Typography>
@@ -169,80 +176,23 @@ class ShowPackages extends React.Component {
 							
 								<CardActions >
 
-									{window.location.pathname === '/admin/snd/packages' ? <ButtonGroup fullWidth
+									<ButtonGroup fullWidth
 										alignItems='center' style={{ backgroundColor: '#38BC8B', margin: 10 }} >
 										<Button style={{ color: 'white' }}
-											onClick={() => this.props.createPackage()}>Edit</Button>
-											<Button style={{ color: 'white' }} onClick={() => this.props.createPackage()}>Delete</Button>
-									</ButtonGroup> :
-										<Button style={{ borderRadius: '9px', color: "white", backgroundColor: tier.colorr, padding: 10, margin: 10 }}
-											fullWidth onClick={() => this.props.history.push('/signupandpayment')}>
-											{tier.buttonText}
-										</Button>}
+											onClick={() => this.props.fetchPackagebyId(tier.id)}>Edit</Button>
+											<Button style={{ color: 'white' }} 
+											onClick={()=>this.props.deletePackage(tier.id)}>Delete</Button>
+									</ButtonGroup>
+									
 
 
 								</CardActions>
 								
 							</Card>
 						</Grid>
-							)):
-							(tiers.map(tier => (
-								// Enterprise card is full width at sm breakpoint
-								<Grid item key={tier.title} xs={12} sm={tier.title === 'Enterprise' ? 12 : 6} md={4}>
-									<Card style={{ borderRadius: '7px' }}>
-										<CardHeader style={{ backgroundColor: tier.backgroundcolor, color: 'white' }}
-											title={tier.title}
-											subheader={tier.subheader}
-											titleTypographyProps={{ align: 'center', }}
-											subheaderTypographyProps={{ align: 'center' }}
-											action={tier.title === 'Premium' ? <StarIcon /> : null}
-											className={classes.cardHeader}
-	
-										/>
-										<CardContent>
-											<div className={classes.cardPricing}>
-												<Typography align="center" component="h2" variant="h3" color="textPrimary">
-													${tier.price}
-												</Typography>
-												<Typography variant="h6" color="textSecondary">
-												
-												</Typography>
-											</div>
-											<ul>
-												{tier.description.map(line => (
-													<Typography
-														component="li"
-														variant="subtitle1"
-														align="center"
-														key={line}
-													>
-														{line}
-													</Typography>
-												))}
-											</ul>
-										</CardContent>
-									
-										<CardActions >
-	
-											{window.location.pathname === '/admin/snd/packages' ? <ButtonGroup fullWidth
-												alignItems='center' style={{ backgroundColor: tier.colorr, margin: 10 }} >
-												<Button style={{ color: 'white' }}
-													onClick={() => this.props.createPackage()}>Edit</Button>
-													<Button style={{ color: 'white' }} onClick={() => this.props.createPackage()}>Delete</Button>
-											</ButtonGroup> :
-												<Button style={{ borderRadius: '9px', color: "white", backgroundColor: tier.colorr, padding: 10, margin: 10 }}
-													fullWidth onClick={() => this.props.history.push('/signupandpayment')}>
-													{tier.buttonText}
-												</Button>}
-	
-	
-										</CardActions>
-										
-									</Card>
-								</Grid>
-							)))
 							
-							}
+						
+						)}
 						
 					</Grid>
 				</Container>
@@ -250,7 +200,8 @@ class ShowPackages extends React.Component {
 		);
 	}
 }
-ShowPackages.propTypes = {
-	classes: PropTypes.object.isRequired,
-};
-export default withRouter(withStyles(useStyles)(ShowPackages));
+// ShowPackages.propTypes = {
+// 	classes: PropTypes.object.isRequired,
+// 	packagelist:PropTypes.array
+// };
+export default ShowPackages;

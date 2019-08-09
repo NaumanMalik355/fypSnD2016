@@ -24,6 +24,7 @@ class SignInView extends Component {
                 return (<SignIn handleLogin={this.props.handleLogin} />)
             case SignIn_Status.SUCCESS:
               console.log('success')
+                 window.location.pathname==='/distributor/sigin'?this.props.history.push('/distributor/snd/dashboard'):
                 this.props.history.push('/admin/snd/dashboard')
                 break;
             case SignIn_Status.FAILED:

@@ -20,6 +20,7 @@ import CreateUser from './components/distributor/users/createUsers';
 import CreateRole from './components/distributor/Roles/createRole'
 import ShowRole from './components/distributor/Roles/showRoles'
 import RolesView from './components/distributor/Roles/rolesView'
+import ShowPackageUser from  './components/other/pricing'
 import NestedList from './components/distributor/dashboard/DropDownMenu';
 import Features from './components/other/features.js';
 const Root = () => (
@@ -59,20 +60,22 @@ const Root = () => (
 					return (
 						<div>
 							<SimpleAppBar />
-							<ShowPackages />
+							<br/>
+							<ShowPackageUser />
 							<Footer />
 						</div>
 					);
 				}}
 			/>
 			{/***************************** admin ******************************/}
-			<Route exact path="/admin/sigin" component={SignInView} />
+			<Route exact path="/admin/snd" component={SignInView} />
 		    <Route exact path="/admin/snd/dashboard" component={Dashboard} />
 			<Route exact path="/admin/snd/packages" component={PackagesView} />
 			<Route exact path="/admin/snd/packages" component={PackagesView} />
 			<Route exact path="/admin/snd/Users" component={AllUsers} />
  
 		{/***************************** distributor ******************************/}
+		<Route exact path="/distributor/sigin" component={SignInView} />
 		<Route exact path="/distributor/snd/New" component={NestedList} />
 			<Route exact path="/signupandpayment" component={paymentView} />
 			<Route exact path="/distributor/snd/dashboard" component={DashboardDis} />

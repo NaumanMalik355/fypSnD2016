@@ -32,6 +32,12 @@ import ExpandMore from '@material-ui/icons/ExpandMore';
 import StarBorder from '@material-ui/icons/StarBorder';
 import NestedList from './DropDownMenu'
 import withWidth from '@material-ui/core/withWidth';
+import DashboardIcon from '@material-ui/icons/Dashboard';
+import PeopleIcon from '@material-ui/icons/People';
+import GroupAddIcon from '@material-ui/icons/GroupAdd';
+import ViewListIcon from '@material-ui/icons/ViewList';
+import PersonAddIcon from '@material-ui/icons/PersonAdd';
+import PersonIcon from '@material-ui/icons/Person';
 //import CreatePackage from '../packages/createPackage.js';
 //import ShowPackage from '../packages/showPackage.js';
 //import EnhancedTableHead from './showUsers.js';
@@ -83,8 +89,9 @@ const useStyles = makeStyles(theme => ({
 		paddingTop: 60,
 		width: '100%',
 		maxWidth: 240,
+		height:'100%',
 		overflowY: 'hidden',
-		paddingBottom: '170%',
+		//paddingBottom: '170%',
 		backgroundColor: 'red'//theme.palette.background.paper,
 	},
 	nested: {
@@ -185,7 +192,7 @@ function DashboardDis(props) {
 		>
 			<ListItem button onClick={() => props.history.push('/distributor/snd/dashboard')}>
 				<ListItemIcon>
-					<SendIcon style={{ color: 'white' }} />
+					<DashboardIcon style={{ color: 'white' }} />
 				</ListItemIcon>
 				<ListItemText primary="Dashboard" />
 			</ListItem>
@@ -193,7 +200,7 @@ function DashboardDis(props) {
 			<ListItem button onClick={handleClick}
 			>
 				<ListItemIcon>
-					<InboxIcon style={{ color: 'white' }} />
+					<PeopleIcon style={{ color: 'white' }} />
 				</ListItemIcon>
 				<ListItemText primary="Manage Roles" />
 				{open ? <ExpandMore /> : <ExpandLess />}
@@ -203,14 +210,14 @@ function DashboardDis(props) {
 					<ListItem button className={classes.nested}
 						onClick={() => { props.LoadNewRole(); props.history.push('/distributor/snd/roles/createRole') }}>
 						<ListItemIcon>
-							<StarBorder style={{ color: 'white' }} />
+							<GroupAddIcon style={{ color: 'white' }} />
 						</ListItemIcon>
 						<ListItemText primary="Create Roles" />
 					</ListItem>
 					<ListItem button className={classes.nested}
 						onClick={() => { props.LoadShowRole(); props.history.push('/distributor/snd/roles/showRole') }}>
 						<ListItemIcon>
-							<StarBorder style={{ color: 'white' }} />
+							<ViewListIcon style={{ color: 'white' }} />
 						</ListItemIcon>
 						<ListItemText primary="Show Roles" />
 					</ListItem>
@@ -220,7 +227,7 @@ function DashboardDis(props) {
 			<ListItem button onClick={handleClick}
 			>
 				<ListItemIcon>
-					<InboxIcon style={{ color: 'white' }} />
+					<PersonIcon style={{ color: 'white' }} />
 				</ListItemIcon>
 				<ListItemText primary="Manage Users" />
 				{open ? <ExpandMore /> : <ExpandLess />}
@@ -230,25 +237,25 @@ function DashboardDis(props) {
 					<ListItem button className={classes.nested}
 						onClick={() => { props.LoadNewUser(); props.history.push('/distributor/snd/users/User') }}>
 						<ListItemIcon>
-							<StarBorder style={{ color: 'white' }} />
+							<PersonAddIcon style={{ color: 'white' }} />
 						</ListItemIcon>
 						<ListItemText primary="Create User" />
 					</ListItem>
 					<ListItem button className={classes.nested}
 						onClick={() => { props.LoadShowUser(); props.history.push('/distributor/snd/users/User') }}>
 						<ListItemIcon>
-							<StarBorder style={{ color: 'white' }} />
+							<ViewListIcon style={{ color: 'white' }} />
 						</ListItemIcon>
 						<ListItemText primary="Show User" />
 					</ListItem>
 				</List>
 			</Collapse>
-			<ListItem button>
+			{/* <ListItem button>
 				<ListItemIcon>
 					<DraftsIcon style={{ color: 'white' }} />
 				</ListItemIcon>
 				<ListItemText primary="Agent Management" />
-			</ListItem>
+			</ListItem> */}
 
 		</List>
 	);
