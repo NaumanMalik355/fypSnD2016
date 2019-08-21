@@ -12570,24 +12570,27 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Numan\\.nuget\\packages\\": {},
+    "C:\\Users\\Usman Khan\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\ASP.NET Core\\uploadimagetoazure\\EmployeeManagementSystem\\EmployeeManagementSystem.csproj",
+      "projectUniqueName": "D:\\Semesters\\WebDev\\FYPSnD\\fypSnD2016\\ServicesAquisitionPortal\\Backend\\EmployeeManagementSystem\\EmployeeManagementSystem.csproj",
       "projectName": "EmployeeManagementSystem",
-      "projectPath": "E:\\ASP.NET Core\\uploadimagetoazure\\EmployeeManagementSystem\\EmployeeManagementSystem.csproj",
-      "packagesPath": "C:\\Users\\Numan\\.nuget\\packages\\",
-      "outputPath": "E:\\ASP.NET Core\\uploadimagetoazure\\EmployeeManagementSystem\\obj\\",
+      "projectPath": "D:\\Semesters\\WebDev\\FYPSnD\\fypSnD2016\\ServicesAquisitionPortal\\Backend\\EmployeeManagementSystem\\EmployeeManagementSystem.csproj",
+      "packagesPath": "C:\\Users\\Usman Khan\\.nuget\\packages\\",
+      "outputPath": "D:\\Semesters\\WebDev\\FYPSnD\\fypSnD2016\\ServicesAquisitionPortal\\Backend\\EmployeeManagementSystem\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
+        "C:\\Microsoft\\Xamarin\\NuGet\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Numan\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\Usman Khan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"
