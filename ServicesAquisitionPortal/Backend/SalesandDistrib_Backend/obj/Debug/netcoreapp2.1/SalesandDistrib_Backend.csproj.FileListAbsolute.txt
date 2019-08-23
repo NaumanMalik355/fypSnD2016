@@ -1,0 +1,14 @@
+E:\ASP.NET Core\SalesandDistrib_Backend\SalesandDistrib_Backend\bin\Debug\netcoreapp2.1\SalesandDistrib_Backend.deps.json
+E:\ASP.NET Core\SalesandDistrib_Backend\SalesandDistrib_Backend\bin\Debug\netcoreapp2.1\SalesandDistrib_Backend.runtimeconfig.json
+E:\ASP.NET Core\SalesandDistrib_Backend\SalesandDistrib_Backend\bin\Debug\netcoreapp2.1\SalesandDistrib_Backend.runtimeconfig.dev.json
+E:\ASP.NET Core\SalesandDistrib_Backend\SalesandDistrib_Backend\bin\Debug\netcoreapp2.1\SalesandDistrib_Backend.dll
+E:\ASP.NET Core\SalesandDistrib_Backend\SalesandDistrib_Backend\bin\Debug\netcoreapp2.1\SalesandDistrib_Backend.pdb
+E:\ASP.NET Core\SalesandDistrib_Backend\SalesandDistrib_Backend\obj\Debug\netcoreapp2.1\SalesandDistrib_Backend.csprojAssemblyReference.cache
+E:\ASP.NET Core\SalesandDistrib_Backend\SalesandDistrib_Backend\obj\Debug\netcoreapp2.1\SalesandDistrib_Backend.csproj.CoreCompileInputs.cache
+E:\ASP.NET Core\SalesandDistrib_Backend\SalesandDistrib_Backend\obj\Debug\netcoreapp2.1\SalesandDistrib_Backend.RazorAssemblyInfo.cache
+E:\ASP.NET Core\SalesandDistrib_Backend\SalesandDistrib_Backend\obj\Debug\netcoreapp2.1\SalesandDistrib_Backend.RazorAssemblyInfo.cs
+E:\ASP.NET Core\SalesandDistrib_Backend\SalesandDistrib_Backend\obj\Debug\netcoreapp2.1\SalesandDistrib_Backend.AssemblyInfoInputs.cache
+E:\ASP.NET Core\SalesandDistrib_Backend\SalesandDistrib_Backend\obj\Debug\netcoreapp2.1\SalesandDistrib_Backend.AssemblyInfo.cs
+E:\ASP.NET Core\SalesandDistrib_Backend\SalesandDistrib_Backend\obj\Debug\netcoreapp2.1\SalesandDistrib_Backend.RazorTargetAssemblyInfo.cache
+E:\ASP.NET Core\SalesandDistrib_Backend\SalesandDistrib_Backend\obj\Debug\netcoreapp2.1\SalesandDistrib_Backend.dll
+E:\ASP.NET Core\SalesandDistrib_Backend\SalesandDistrib_Backend\obj\Debug\netcoreapp2.1\SalesandDistrib_Backend.pdb

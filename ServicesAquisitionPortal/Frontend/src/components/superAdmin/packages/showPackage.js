@@ -159,9 +159,9 @@ class ShowPackages extends React.Component {
 												component="li"
 												variant="subtitle1"
 												align="center"
-												key={tier.totalusers}
+												key={tier.totalUsers}
 											>
-												{tier.totalusers} users included
+												{tier.totalUsers} users included
 											</Typography>
 											<Typography
 												component="li"
@@ -169,7 +169,7 @@ class ShowPackages extends React.Component {
 												align="center"
 												key={tier.providedStorage}
 											>
-												{tier.providedStorage} GB of Storage
+												{tier.bandwidth} GB of Storage
 											</Typography>
 								
 								</CardContent>

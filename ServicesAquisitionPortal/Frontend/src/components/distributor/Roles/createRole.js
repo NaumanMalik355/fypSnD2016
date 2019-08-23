@@ -4,7 +4,6 @@ import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
-
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import TextField from '@material-ui/core/TextField';
@@ -36,26 +35,34 @@ const privilagesList=[
 	{title:'Manage Distributor',margin:0},{title:'Add Distributor',margin:20},{title:'Product Discount',margin:20},
 
 ]
+
+
  function CreateRole(props) {
 	const classes = useStyles();
-	//const [item, selectItem] = useState('');
+	const [list, selectItem] = React.useState([]);
+	const [roleName,setRole]=React.useState('')
+	function getSelectedList(lst){
+	selectItem(lst)
+	}
 	return (
 	
 		
 					<Paper className={classes.paperRoot}>
 					
-					 
+				
 				 <Grid container spacing={3} direction="column" justify="center">
 					
 					<Grid item >
-						<TextField  label="Role (Required)" className={classes.textField} />
+						<TextField  label="Role (Required)" className={classes.textField} 
+						onChange={(event)=>setRole(event.target.value)}
+						/>
 					</Grid>
 
 					<Grid item >
 					<Typography variant="h6">Choose Privileges</Typography>
 					</Grid>
 					
-						<Grid item><TransferList /></Grid>
+						<Grid item><TransferList getSelectedList={getSelectedList}/></Grid>
 				
 				</Grid> 
 				<br /> 	<br />
@@ -65,7 +72,7 @@ const privilagesList=[
 				<Button alignItems="center" variant="contained" color="default"
 				onClick={
 					()=>{
-					  props.showRole();props.history.push('/distributor/snd/roles/showRole')
+					  props.showRole()//;props.history.push('/distributor/snd/roles/showRole')
 					}
 				  }>
 					
@@ -76,7 +83,7 @@ const privilagesList=[
 				<Button alignItems="center" variant="contained" color="secondary"
 				onClick={
 					()=>{
-					  props.showRole();props.history.push('/distributor/snd/roles/showRole')
+					  props.showRole()//;props.history.push('/distributor/snd/roles/showRole')
 					}
 				  }>
 					
@@ -87,7 +94,8 @@ const privilagesList=[
 						<Button alignItems="center" variant="contained" color="primary"
 						onClick={
 							()=>{
-							  props.showRole();props.history.push('/distributor/snd/roles/showRole')
+								props.AssignRolePrivileges(roleName,props.userId,list)
+							 // props.showRole();props.history.push('/distributor/snd/roles/showRole')
 							}
 						  }>
 					

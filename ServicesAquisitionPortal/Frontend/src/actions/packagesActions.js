@@ -5,8 +5,8 @@ export const PostPackage = (packageName, price, totalusers, providedStorage, dur
 
 
     var packData = {
-        'Name': packageName, 'Price': price, 'Totalusers': totalusers,
-        'providedStorage': providedStorage, 'totalDuration': duration
+        'Name': packageName, 'Price': price, 'TotalUsers': totalusers,
+        'Bandwidth': providedStorage, 'DurationPerMonth': duration
     }
     const postPack = fetch('https://localhost:5001/api/Packages', {
         method: 'POST',
@@ -111,8 +111,8 @@ export const fetchPackagebyId = (id) => dispatch => {
 
 export const updatePackage = (id,packageName, price, totalusers, providedStorage, duration) => dispatch => {
     var packData = {'Id':id,
-        'Name': packageName, 'Price': price, 'Totalusers': totalusers,
-        'providedStorage': providedStorage, 'totalDuration': duration
+        'Name': packageName, 'Price': price, 'TotalUsers': totalusers,
+        'Bandwidth': providedStorage, 'DurationPerMonth': duration
     }
     const postPack = fetch('https://localhost:5001/api/Packages/'+id, {
         method: 'PUT',

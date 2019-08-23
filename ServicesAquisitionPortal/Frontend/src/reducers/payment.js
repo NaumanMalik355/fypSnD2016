@@ -7,7 +7,8 @@ export default function(state=initialState,action){
         case Payment_Action.NEW:
             return {...state,payment_status:Payment_Status.NEW}
         case Payment_Action.SUCCESS:
-            return {...state,payment_status:Payment_Status.SUCCESS}
+        alert("distributor registered success")
+            return {...state,payment_status:Payment_Status.PAYMENT}
         case Payment_Action.PAYMENT:
                 return {...state,payment_status:Payment_Status.PAYMENT}
     

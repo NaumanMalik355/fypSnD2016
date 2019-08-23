@@ -2,7 +2,9 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Payment_Action, Payment_Status } from '../../../constants/paymentActions'
 import CheckOut from './checkOut'
+import DistributorSignUp from './registeration'
 import PaymentForm from './payment'
+import {signUpDistributor} from '../../../actions/signUpActions'
 const mapStateToProps = (state) => {
     return {
         payment_status: state.payment_Reducer.payment_status
@@ -11,8 +13,10 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => ({
     handlePayemntMethod: () => dispatch({ type: Payment_Action.PAYMENT }),
-
+   
     handleSuccess: () => dispatch({ type: Payment_Action.SUCCESS }),
+    
+    signUpDistributor:(disDetail)=>dispatch(signUpDistributor(disDetail)),
     // handleShowSignup: ()=>dispatch({type: account_Actions.SIGNUPSHOW})
 })
 
@@ -24,14 +28,14 @@ class paymentView extends Component {
     getscreen(componentstatus) {
         switch (componentstatus) {
             case Payment_Status.NEW:
-                return <CheckOut handlePayemntMethod={this.props.handlePayemntMethod}
-                    handleSuccess={this.props.handleSuccess} />
+                return <DistributorSignUp 
+                    signUpDistributor={this.props.signUpDistributor}/>
             case Payment_Status.PAYMENT:
-                return <CheckOut handlePayemntMethod={this.props.handlePayemntMethod}
-                    handleSuccess={this.props.handleSuccess} />
+                return <PaymentForm/>
             case Payment_Status.SUCCESS:
                 return <CheckOut handlePayemntMethod={this.props.handlePayemntMethod}
-                    handleSuccess={this.props.handleSuccess} />
+                    handleSuccess={this.props.handleSuccess} 
+                    signUpDistributor={this.props.signUpDistributor}/>
 
         }
     }

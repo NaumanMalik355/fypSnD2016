@@ -5,7 +5,8 @@ import { connect } from 'react-redux';
 import { login } from '../../../../actions/signInActions'
 import {withRouter} from 'react-router-dom'
 const mapStateToProps = state => ({
-    signIn_Status: state.signIn_Reducer.signIn_status
+    signIn_Status: state.signIn_Reducer.signIn_status,
+    signIn_UserId:state.signIn_Reducer.signIn_UserId
 })
 const mapDipatchToProps = (dispatch) => {
     return {
@@ -24,7 +25,8 @@ class SignInView extends Component {
                 return (<SignIn handleLogin={this.props.handleLogin} />)
             case SignIn_Status.SUCCESS:
               console.log('success')
-                 window.location.pathname==='/distributor/sigin'?this.props.history.push('/distributor/snd/dashboard'):
+              alert("in sign in "+this.props.userId)
+                 window.location.pathname==='/distributor/sigin'?this.props.history.push('/distributor/snd/dashboard/'+this.props.signIn_UserId):
                 this.props.history.push('/admin/snd/dashboard')
                 break;
             case SignIn_Status.FAILED:

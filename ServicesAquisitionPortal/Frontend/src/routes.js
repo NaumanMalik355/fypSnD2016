@@ -9,7 +9,7 @@ import SignInView from './components/other/account/signIn/signIn_View'
 import paymentView from './components/distributor/payment/payment_View'
 import Dashboard from './components/superAdmin/dashboard/dashboard';
 import DashboardDis from './components/distributor/dashboard/dashboard';
-import AllUsers from './components/superAdmin/dashboard/showUsers';
+
 import ShowUsers  from './components/distributor/users/showUsers';
 import UsersView from './components/distributor/users/usersView';
 import Contact from './components/other/contact';
@@ -23,6 +23,7 @@ import RolesView from './components/distributor/Roles/rolesView'
 import ShowPackageUser from  './components/other/pricing'
 import NestedList from './components/distributor/dashboard/DropDownMenu';
 import Features from './components/other/features.js';
+import ShowDistributor from './components/superAdmin/showUsers'
 const Root = () => (
 	<BrowserRouter>
 		<Switch>
@@ -71,19 +72,19 @@ const Root = () => (
 			<Route exact path="/admin/snd" component={SignInView} />
 		    <Route exact path="/admin/snd/dashboard" component={Dashboard} />
 			<Route exact path="/admin/snd/packages" component={PackagesView} />
-			<Route exact path="/admin/snd/packages" component={PackagesView} />
-			<Route exact path="/admin/snd/Users" component={AllUsers} />
+		
+			<Route exact path="/admin/snd/Users" component={Dashboard} />
  
 		{/***************************** distributor ******************************/}
 		<Route exact path="/distributor/sigin" component={SignInView} />
 		<Route exact path="/distributor/snd/New" component={NestedList} />
 			<Route exact path="/signupandpayment" component={paymentView} />
-			<Route exact path="/distributor/snd/dashboard" component={DashboardDis} />
-			<Route exact path="/distributor/snd/users/User" component={UsersView} />
-			<Route exact path="/distributor/snd/users/showUser" component={UsersView} />
-			<Route exact path="/distributor/snd/users/createUser" component={UsersView} />
-			<Route exact path="/distributor/snd/roles/createRole" component={RolesView} />
-			<Route exact path="/distributor/snd/roles/showRole" component={RolesView} />
+			<Route exact path="/distributor/snd/dashboard/:userId" component={DashboardDis} />
+			<Route exact path="/distributor/snd/users/User/:userId" component={UsersView} />
+			<Route exact path="/distributor/snd/users/showUser/:userId" component={UsersView} />
+			<Route exact path="/distributor/snd/users/createUser/:userId" component={UsersView} />
+			<Route exact path="/distributor/snd/roles/:userId" component={RolesView} />
+			<Route exact path="/distributor/snd/roles/:userId" component={RolesView} />
 		</Switch>
 	</BrowserRouter>
 );

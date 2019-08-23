@@ -1,6 +1,7 @@
 import { SignIn_Action, SignIn_Status } from '../constants/signInActions'
 const initialState = {
-    signIn_status: SignIn_Status.NEW
+    signIn_status: SignIn_Status.NEW,
+    signIn_UserId:0,
 }
 export default function (state = initialState, action) {
 
@@ -9,7 +10,8 @@ export default function (state = initialState, action) {
             return { ...state, signIn_status: SignIn_Status.NEW }
         case SignIn_Action.AUTHORIZED:
         console.log('reducer success')
-            return { ...state, signIn_status: SignIn_Status.SUCCESS }
+     
+            return { ...state, signIn_status: SignIn_Status.SUCCESS,signIn_UserId:action.userId }
         case SignIn_Action.NOTAUTHORIZED:
         console.log('reducer not')
             return { ...state, signIn_status: SignIn_Status.FAILED }

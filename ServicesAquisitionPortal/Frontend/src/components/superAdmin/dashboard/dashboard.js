@@ -25,7 +25,7 @@ import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 import StarBorder from '@material-ui/icons/StarBorder';
 import { withRouter } from 'react-router-dom'
-
+import ShowDistributor from '../showUsers'
 import { connect } from 'react-redux'
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
@@ -41,6 +41,7 @@ import GroupAddIcon from '@material-ui/icons/GroupAdd';
 import ViewListIcon from '@material-ui/icons/ViewList';
 import PersonAddIcon from '@material-ui/icons/PersonAdd';
 import PersonIcon from '@material-ui/icons/Person';
+
 //import ChartsGrid from '../../dashboard-charts/chartsGrid'
 //////////////////
 
@@ -239,9 +240,17 @@ function Dashboard(props) {
 						</ListItemIcon>
 						<ListItemText primary="Show Package" />
 					</ListItem>
+
+
 				</List>
 			</Collapse>
-
+			<ListItem button 
+						onClick={() => { props.LoadNewPackage(); props.history.push('/admin/snd/Users') }}>
+						<ListItemIcon>
+							<ViewListIcon style={{ color: 'white' }} />
+						</ListItemIcon>
+						<ListItemText primary="Users" />
+					</ListItem>
 
 
 
@@ -306,6 +315,9 @@ function Dashboard(props) {
 							if (window.location.pathname === '/admin/snd/dashboard') {
 								return <Typography variant="h6">Dashboard</Typography>
 							}
+							else if (window.location.pathname === '/admin/snd/Users') {
+								return <Typography variant="h6">Users</Typography>
+							}
 							else if (props.packages_Status === Packages_Status.NEW) {
 								return <Typography variant="h6">Create Package</Typography>
 							}
@@ -323,6 +335,7 @@ function Dashboard(props) {
 									</Fab></Grid></Grid>
 							}
 						})()}
+
 
 
 					</div>
@@ -370,8 +383,18 @@ function Dashboard(props) {
 
 			<main className={classes.content}>
 				<div className={classes.toolbar} />
-				{window.location.pathname === '/admin/snd/dashboard' ? <ChartsContainer /> : getScreen}
-
+				{/* {window.location.pathname === '/admin/snd/dashboard' ? <ChartsContainer /> : getScreen} */}
+{(()=>{
+if (window.location.pathname === '/admin/snd/dashboard'){
+	return <ChartsContainer />
+}
+else if (window.location.pathname === '/admin/snd/Users'){
+	return <ShowDistributor />
+}
+else{
+return getScreen
+}
+})()}
 				{/* {showMe()} */}
 			</main>
 		</div>

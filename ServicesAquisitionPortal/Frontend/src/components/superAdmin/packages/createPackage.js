@@ -69,8 +69,8 @@ const useStyles = makeStyles(theme => ({
 	useEffect(() => {
 		
 		if(props.pack!==undefined){
-			setPackageAttribute({name:props.pack.name,price:props.pack.price,duration:props.pack.totalDuration,
-			storage:props.pack.providedStorage,users:props.pack.totalusers})
+			setPackageAttribute({name:props.pack.name,price:props.pack.price,duration:props.pack.durationPerMonth,
+			storage:props.pack.bandwidth,users:props.pack.totalUsers})
 		}
 	  }, []);  //here if [] used mean render only first else render on state change 
 	

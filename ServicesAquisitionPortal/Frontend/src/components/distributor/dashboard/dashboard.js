@@ -107,6 +107,7 @@ function DashboardDis(props) {
 		setOpen(!open);
 	}
 
+	
 	const classes = useStyles();
 	const theme = useTheme();
 	const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -116,25 +117,7 @@ function DashboardDis(props) {
 	}
 
 
-	//selectItem is state which is setState on clicking ListItem
-	const showMe = (text) => {
 
-
-
-		switch (text) {
-			case 'Dashboard':
-				return (props.history.push('/distributor/snd/dashboard'));
-			case 'CreateUser':
-				props.LoadNewUser();
-				return (props.history.push('/distributor/snd/users/User'))
-
-			case 'ViewUser':
-				props.LoadShowUser();
-				return (props.history.push('/distributor/snd/users/User'));
-			case 'UserNotification': return (props.history.push('/admin/snd/Users'))
-
-		}
-	};
 
 
 	const header = (
@@ -190,7 +173,7 @@ function DashboardDis(props) {
 			// }
 			className={classes.drawerRoot}
 		>
-			<ListItem button onClick={() => props.history.push('/distributor/snd/dashboard')}>
+			<ListItem button onClick={() => props.history.push('/distributor/snd/dashboard/'+props.match.params.userId)}>
 				<ListItemIcon>
 					<DashboardIcon style={{ color: 'white' }} />
 				</ListItemIcon>
@@ -208,14 +191,16 @@ function DashboardDis(props) {
 			<Collapse in={open} timeout="auto" unmountOnExit>
 				<List component="div" disablePadding>
 					<ListItem button className={classes.nested}
-						onClick={() => { props.LoadNewRole(); props.history.push('/distributor/snd/roles/createRole') }}>
+						onClick={() => { window.location.pathname==='/distributor/snd/roles/'+props.match.params.userId?
+						props.LoadNewRole():props.LoadNewRole(); props.history.push('/distributor/snd/roles/'+props.match.params.userId) }}>
 						<ListItemIcon>
 							<GroupAddIcon style={{ color: 'white' }} />
 						</ListItemIcon>
 						<ListItemText primary="Create Roles" />
 					</ListItem>
 					<ListItem button className={classes.nested}
-						onClick={() => { props.LoadShowRole(); props.history.push('/distributor/snd/roles/showRole') }}>
+						onClick={() => { 
+					window.location.pathname==='/distributor/snd/roles/'+props.match.params.userId?props.LoadShowRole(): props.LoadShowRole();props.history.push('/distributor/snd/roles/'+props.match.params.userId) }}>
 						<ListItemIcon>
 							<ViewListIcon style={{ color: 'white' }} />
 						</ListItemIcon>
@@ -235,14 +220,14 @@ function DashboardDis(props) {
 			<Collapse in={open} timeout="auto" unmountOnExit>
 				<List component="div" disablePadding>
 					<ListItem button className={classes.nested}
-						onClick={() => { props.LoadNewUser(); props.history.push('/distributor/snd/users/User') }}>
+						onClick={() => { props.LoadNewUser(); props.history.push('/distributor/snd/users/User/'+props.match.params.userId) }}>
 						<ListItemIcon>
 							<PersonAddIcon style={{ color: 'white' }} />
 						</ListItemIcon>
 						<ListItemText primary="Create User" />
 					</ListItem>
 					<ListItem button className={classes.nested}
-						onClick={() => { props.LoadShowUser(); props.history.push('/distributor/snd/users/User') }}>
+						onClick={() => { props.LoadShowUser(); props.history.push('/distributor/snd/users/User/'+props.match.params.userId) }}>
 						<ListItemIcon>
 							<ViewListIcon style={{ color: 'white' }} />
 						</ListItemIcon>
@@ -290,20 +275,20 @@ function DashboardDis(props) {
 					<div>
 
 						{(() => {
-							if (window.location.pathname === '/distributor/snd/dashboard') {
+							if (window.location.pathname === '/distributor/snd/dashboard/'+props.match.params.userId) {
 								return <Typography variant="h6">Dashboard</Typography>
 							}
-							else if (window.location.pathname === '/distributor/snd/roles/createRole') {
+							else if (window.location.pathname === '/distributor/snd/roles/'+props.match.params.userId) {
 								return <Typography variant="h6">Create Role</Typography>
 							}
-							else if (window.location.pathname === '/distributor/snd/roles/showRole') {
+							else if (window.location.pathname === '/distributor/snd/roles/'+props.match.params.userId) {
 
 								return <Grid container direction="row" spacing={2} justify='flex-start'
 									alignItems="center">
 									<Grid item><Typography variant="h6"  >Show Role</Typography> </Grid>
 									<Grid item> <Fab style={{ backgroundColor: '#2e7d32', color: 'white' }} size="small" className={classes.fab}
 										onClick={() => {
-											props.LoadNewRole(); props.history.push('/distributor/snd/roles/createRole')
+											props.LoadNewRole(); props.history.push('/distributor/snd/roles/createRole/'+props.match.params.userId)
 										}
 										}>
 										<AddIcon />
@@ -320,7 +305,7 @@ function DashboardDis(props) {
 									<Grid item><Typography variant="h6"  >Show User</Typography> </Grid>
 									<Grid item> <Fab style={{ backgroundColor: '#2e7d32', color: 'white' }} size="small" className={classes.fab}
 										onClick={() => {
-											props.LoadNewUser(); props.history.push('/distributor/snd/users/User')
+											props.LoadNewUser(); props.history.push('/distributor/snd/users/User/'+props.match.params.userId)
 										}
 										}>
 										<AddIcon />
@@ -401,8 +386,9 @@ function DashboardDis(props) {
           tortor. Habitant morbi tristique senectus et. Adipiscing elit duis tristique sollicitudin
           nibh sit. Ornare aenean euismod elementum nisi quis eleifend. Commodo viverra maecenas
           accumsan lacus vel facilisis. Nulla posuere sollicitudin aliquam ultrices sagittis orci a.
-        </Typography>  */}
-				{window.location.pathname === '/distributor/snd/dashboard' ? <ChartContainer /> : getScreen}
+		</Typography>  */}
+		
+				{window.location.pathname === '/distributor/snd/dashboard/'+props.match.params.userId ? <ChartContainer /> : getScreen}
 				{/* {showMe()} */}
 			</main>
 		</div>

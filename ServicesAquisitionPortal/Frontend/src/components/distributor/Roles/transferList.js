@@ -41,7 +41,12 @@ function union(a, b) {
   return [...a, ...not(b, a)];
 }
 
-export default function TransferList() {
+
+export default function TransferList(props) {
+React.useEffect(()=>{
+//alert("in tranfer list"+right.length)
+props.getSelectedList(right)
+})
   const classes = useStyles();
   const [checked, setChecked] = React.useState([]);
   const [left, setLeft] = React.useState(['add Product', 'Add Roles', 'Add Distributor',
@@ -130,6 +135,7 @@ export default function TransferList() {
 
   return (
     <Grid container spacing={2} justify="center" alignItems="center" className={classes.root}>
+     
       <Grid item>{customList('Available Privileges', left)}</Grid>
       <Grid item>
         <Grid container direction="column" alignItems="center">

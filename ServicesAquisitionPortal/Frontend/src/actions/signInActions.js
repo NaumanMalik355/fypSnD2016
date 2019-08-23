@@ -1,9 +1,9 @@
 import {SignIn_Action} from '../constants/signInActions'
 export const login=(username,password)=>dispatch=>{
    
-    var user ={'username':username,'password':password}
+    var user ={'Email':username,'Password':password}
     
-    const postRequest =  fetch('https://localhost:5001/api/Auth/login', {
+    const postRequest =  fetch('https://localhost:5001/api/Account/Login', {
           method: 'POST',
        headers: {'Content-Type':'application/json;charset=UTF-8'},
       mode: 'cors',
@@ -16,7 +16,8 @@ export const login=(username,password)=>dispatch=>{
         console.log("data:......" + data.signInStatus )
        if(data.signInStatus==='Authorized'){
          console.log('auth')
-         return dispatch({type:SignIn_Action.AUTHORIZED});
+         alert('id is'+data.userId);
+         return dispatch({type:SignIn_Action.AUTHORIZED,userId:data.userId});
        }
        else if(data.signInStatus==='Not_Authorized'){
         console.log('not auth')
